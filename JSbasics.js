@@ -137,7 +137,7 @@ switch (month) {
         console.log("Something went wrong.");
 }
 
-  */
+
 
 let favNum = 43;
 
@@ -154,3 +154,131 @@ switch(true) {
   default:
   console.log("I asked for a number!");
 }
+
+
+// REWRITING AN IF ELSE STRATEMENT WITH ? OR ||
+
+ function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    return confirm('Did parents allow you?');
+  }
+}
+
+function checkAge(age) {
+  return (age > 18) ? true : confirm ('Did parents allow you?');
+}
+
+
+function checkAge(age) {
+  return age > 18 || confirm ('Did parents allow you?');
+}
+
+
+
+function min(a, b) {
+  if (a < b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
+function min(a, b) {
+  return a < b ? a : b;
+}
+
+
+
+FOR LOOPS
+
+//Write a function pow(x,n) that returns x in power n. Or, in other words, multiplies x by itself n times and returns the result.
+
+function pow(x, n) {
+  let result = x;
+
+  for (let i = 1; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+let x = prompt("x?", '');
+let n = prompt("n?", '');
+
+if (n < 1) {
+  alert(`Power ${n} is not supported, use a positive integer`);
+} else {
+  alert( pow(x, n) );
+}
+
+
+
+
+//Rewrite with arrow functions:
+
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);
+
+//Like so:
+
+let ask = (question, yes, no) => {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Do you agree",
+  () => alert("You agreed."),
+  () => alert("You canceled the execution.");
+)
+
+
+
+//Write a function called add7 that takes one number and returns that number + 7.
+    let add7 = (x) => x + 7;
+    console.log(add7(5));
+
+
+
+//Write a function called multiply that takes 2 numbers and returns their product.
+    function multiply (a,b)
+    {return a*b;
+    }
+    console.log(multiply(4,4));
+
+
+
+//Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.
+
+let string = "duDeS"
+function capitalize1 () {
+  console.log(string[0].toLowerCase()+string.slice(1));
+}
+
+function capitalize2 () {
+  console.log(string.charAt(0).toLowerCase()+string.slice(1));
+}
+
+capitalize1();
+capitalize2();
+
+// Write a function called lastLetter that takes a string and returns the very last letter of that string: lastLetter("abcd") should return "d"
+
+function lastLetter () {
+  console.log(string.slice(-1));
+}
+
+lastLetter();
+
+*/
